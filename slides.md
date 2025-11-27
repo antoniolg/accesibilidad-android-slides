@@ -35,7 +35,7 @@ social3: 🌍 https://devexpert.io
 
 ---
 layout: center
-background: /section-accessibility-bg.png
+background: /section-recipes-bg.png
 ---
 
 # Accesibilidad en Android
@@ -131,7 +131,7 @@ background: /section-accessibility-bg.png
 
 ---
 layout: center
-background: /section-compose-bg.png
+background: /section-recipes-bg.png
 ---
 
 # **Jetpack Compose**
@@ -742,29 +742,28 @@ layout: center
 
 # 5.3 Testing automatizado
 
-<div class="grid grid-cols-2 gap-8 mt-10">
-  <div class="p-6 rounded-xl border border-blue-400/50 bg-blue-900/20 backdrop-blur-sm">
-    <h3 class="text-2xl font-bold text-blue-300 mb-4">Habilitar checks de accesibilidad</h3>
-    <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
+<div class="flex flex-col gap-3">
+  <div class="grid grid-cols-[1fr_3fr] gap-6 items-center p-6 rounded-xl border border-blue-400/50 bg-blue-900/20 backdrop-blur-sm">
+    <div>
+      <h3 class="text-2xl font-bold text-blue-300 mb-4">Habilitar checks de accesibilidad</h3>
+    </div>
+    <div>
 ```kotlin
 @OptIn(ExperimentalTestApi::class)
 @Test
 fun myComposeTest(): Unit = runComposeUiTest {
-
     enableAccessibilityChecks() // ¡Mágico!
-
-        setContentView {
-                ...
-        }
+    setContentView { ...}
 }
 ```
     </div>
-    <p class="text-lg text-slate-200 mt-4">Activa las comprobaciones automáticas de accesibilidad en tus tests de UI.</p>
   </div>
 
-  <div class="p-6 rounded-xl border border-emerald-400/50 bg-emerald-900/20 backdrop-blur-sm">
-    <h3 class="text-2xl font-bold text-emerald-300 mb-4">Verificar roles semánticos</h3>
-    <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
+  <div v-click class="grid grid-cols-[1fr_3fr] gap-6 items-center p-6 rounded-xl border border-emerald-400/50 bg-emerald-900/20 backdrop-blur-sm">
+    <div>
+      <h3 class="text-2xl font-bold text-emerald-300 mb-4">Verificar roles semánticos</h3>
+    </div>
+    <div>
 ```kotlin
 composeTestRule
     .onNodeWithText("My Button")
@@ -775,7 +774,6 @@ composeTestRule
     )
 ```
     </div>
-    <p class="text-lg text-slate-200 mt-4">Asegura que los componentes tienen los roles de accesibilidad correctos.</p>
   </div>
 </div>
 
@@ -793,7 +791,7 @@ composeTestRule
     </ul>
   </div>
 
-  <div class="p-6 rounded-xl border border-emerald-400/50 bg-emerald-900/20 backdrop-blur-sm">
+  <div v-click class="p-6 rounded-xl border border-emerald-400/50 bg-emerald-900/20 backdrop-blur-sm">
     <h3 class="text-2xl font-bold text-emerald-300 mb-4">Proceso continuo</h3>
     <ul class="text-lg space-y-3 text-slate-200">
       <li>Integrar el testing de accesibilidad en el CI/CD.</li>
@@ -805,12 +803,10 @@ composeTestRule
 
 ---
 layout: center
+background: /section-recipes-bg.png
 ---
 
-<div class="flex flex-col items-center p-16 rounded-3xl bg-slate-800/60 border border-teal-500/40 backdrop-blur-md shadow-2xl">
-  <div class="text-8xl mb-8">✨</div>
-  <h1 class="text-5xl font-bold text-teal-400 text-center !mb-0 leading-tight">Conclusiones</h1>
-</div>
+# Conclusiones
 
 ---
 
@@ -818,23 +814,23 @@ layout: center
 
 <div class="mt-10 max-w-4xl mx-auto">
   <ul class="text-xl space-y-6 text-slate-200">
-    <li class="flex items-start gap-3">
+    <li v-click class="flex items-start gap-3">
       <span class="text-emerald-400 text-3xl">✅</span>
       <span>La accesibilidad es un <b>derecho</b>, no una opción.</span>
     </li>
-    <li class="flex items-start gap-3">
+    <li v-click class="flex items-start gap-3">
       <span class="text-blue-400 text-3xl">✨</span>
       <span>Diseñar con accesibilidad desde el principio.</span>
     </li>
-    <li class="flex items-start gap-3">
+    <li v-click class="flex items-start gap-3">
       <span class="text-purple-400 text-3xl">🧩</span>
       <span>Usar componentes estándar siempre que sea posible.</span>
     </li>
-    <li class="flex items-start gap-3">
+    <li v-click class="flex items-start gap-3">
       <span class="text-yellow-400 text-3xl">🧪</span>
       <span>Testear la accesibilidad de forma continua.</span>
     </li>
-    <li class="flex items-start gap-3">
+    <li v-click class="flex items-start gap-3">
       <span class="text-rose-400 text-3xl">👂</span>
       <span>Escuchar a los usuarios y mejorar constantemente.</span>
     </li>
