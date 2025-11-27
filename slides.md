@@ -256,32 +256,72 @@ background: /section-recipes-bg.png
 
 ---
 
-### 4.1 Diseño accesible
+# En este bloque...
 
-## Cada componente de UI tiene sus **guidelines** y **guías de accesibilidad**
+<div class="grid grid-cols-3 gap-8 mt-20">
+  <div class="flex flex-col items-center p-8 rounded-2xl bg-slate-800/50 border border-emerald-500/30 backdrop-blur-sm">
+    <div class="text-6xl mb-6">🎨</div>
+    <h2 class="text-2xl font-bold text-emerald-400 text-center">Diseño<br>accesible</h2>
+  </div>
 
----
+  <div class="flex flex-col items-center p-8 rounded-2xl bg-slate-800/50 border border-blue-500/30 backdrop-blur-sm">
+    <div class="text-6xl mb-6">📝</div>
+    <h2 class="text-2xl font-bold text-blue-400 text-center">Contenido<br>accesible</h2>
+  </div>
 
-### 4.1 Diseño: El problema del contraste
-
-<div class="flex justify-center">
-<img src="/CleanShot 2025-03-26 at 17.14.05@2x.png" />
+  <div class="flex flex-col items-center p-8 rounded-2xl bg-slate-800/50 border border-purple-500/30 backdrop-blur-sm">
+    <div class="text-6xl mb-6">👆</div>
+    <h2 class="text-2xl font-bold text-purple-400 text-center">Interacción<br>accesible</h2>
+  </div>
 </div>
 
 ---
 
-### 4.1 Diseño: Tamaño adecuado
+# 4.1 Diseño accesible
 
-- Líneas inferiores a 120 caracteres
-- Botones con un ancho máximo de 320dp
-- Área táctil de los elementos clickables mínimo 48dp
-- Uso de `sp` en lugar de `dp` para fuentes
+<div class="grid grid-cols-2 gap-12 items-center">
+  <div class="text-left">
+    <h2 class="!text-4xl leading-tight">Cada componente de UI tiene sus <b>guidelines</b> y <b>guías de accesibilidad</b></h2>
+  </div>
+  <div class="flex justify-center transform hover:scale-105 transition-transform duration-500">
+    <img src="/material-guidelines.png" class="rounded-xl shadow-2xl border border-slate-700/50" />
+  </div>
+</div>
 
 ---
 
-### 4.1 Diseño: Área táctil (Touch Target)
+# 4.1 Diseño: El problema del contraste
 
-- Área táctil de los elementos clickables mínimo 48dp
+<div class="flex justify-center">
+<img src="/CleanShot 2025-03-26 at 17.14.05@2x.png" width="700" />
+</div>
+
+---
+
+# 4.1 Diseño: Tamaño adecuado
+
+<div class="grid grid-cols-2 gap-8 mt-10">
+  <div class="flex items-center gap-4 p-4 rounded-lg bg-slate-800/50 border border-slate-700">
+    <div class="text-4xl text-emerald-400">📏</div>
+    <p class="text-lg text-slate-200">Líneas inferiores a 120 caracteres</p>
+  </div>
+  <div class="flex items-center gap-4 p-4 rounded-lg bg-slate-800/50 border border-slate-700">
+    <div class="text-4xl text-blue-400">👆</div>
+    <p class="text-lg text-slate-200">Botones con un ancho máximo de 320dp</p>
+  </div>
+  <div class="flex items-center gap-4 p-4 rounded-lg bg-slate-800/50 border border-slate-700">
+    <div class="text-4xl text-rose-400">🎯</div>
+    <p class="text-lg text-slate-200">Área táctil de los elementos clickables mínimo 48dp</p>
+  </div>
+  <div class="flex items-center gap-4 p-4 rounded-lg bg-slate-800/50 border border-slate-700">
+    <div class="text-4xl text-purple-400">🔡</div>
+    <p class="text-lg text-slate-200">Uso de <code class="text-emerald-300">sp</code> en lugar de <code class="text-emerald-300">dp</code> para fuentes</p>
+  </div>
+</div>
+
+---
+
+# 4.1 Diseño: Área táctil (Touch Target)
 
 <div class="flex justify-center">
 <img src="/Arc 2025-03-26 17.18.24.png" />
@@ -289,7 +329,7 @@ background: /section-recipes-bg.png
 
 ---
 
-### 4.1 Diseño: Indicadores visuales
+# 4.1 Diseño: Indicadores visuales
 
 <div class="flex justify-center">
 <img src="/Slides - Accesibilidad en Android.png" />
@@ -297,7 +337,7 @@ background: /section-recipes-bg.png
 
 ---
 
-### 4.2 Semántica: **Descripciones útiles**
+# 4.2 Semántica: Descripciones útiles
 
 - En widgets de Compose obligatorios
 
@@ -310,7 +350,7 @@ Icon(
 
 ---
 
-### 4.2 Semántica: **Descripciones útiles**
+# 4.2 Semántica: Descripciones útiles
 
 - En widgets de Compose donde no es obligatorio
 
@@ -324,7 +364,7 @@ Text(
 
 ---
 
-### 4.2 Semántica: **Elementos decorativos**
+# 4.2 Semántica: Elementos decorativos
 
 - Si el elemento es solo decorativo, debemos ocultarlo al lector:
 
@@ -342,7 +382,7 @@ Text(
 
 ---
 
-### 4.2 Semántica: **Agrupación de elementos**
+# 4.2 Semántica: Agrupación de elementos
 
 - Problema: TalkBack lee cada texto por separado.
 - Solución: `mergeDescendants`
@@ -362,7 +402,7 @@ Column(
 
 ---
 
-### 4.2 Semántica: **Navegación por Encabezados**
+# 4.2 Semántica: Navegación por Encabezados
 
 <div class="flex justify-center">
 <img src="/talkback-encabezados.png" width="700" />
@@ -370,7 +410,7 @@ Column(
 
 ---
 
-### 4.2 Semántica: **Encabezados**
+# 4.2 Semántica: Encabezados
 
 - Permite al usuario saltar rápidamente entre secciones.
 <br/>
@@ -385,7 +425,7 @@ Text(
 
 ---
 
-### 4.3 Interacción accesible
+# 4.3 Interacción accesible
 
 - Gestión del foco
 - Alternativas a gestos
@@ -393,7 +433,7 @@ Text(
 
 ---
 
-### Gestión del foco
+# Gestión del foco
 
 - ⚠️ **Importante**: modificar el foco manualmente es un antipatrón
   - Utilizarlo como último recurso
@@ -402,7 +442,7 @@ Text(
 
 ---
 
-### Gestión del foco: **Orden de lectura**
+## Gestión del foco: Orden de lectura
 
 ```kotlin
 val (first, second, third, fourth) = remember { FocusRequester.createRefs() }
@@ -418,7 +458,7 @@ Column {
 
 ---
 
-### Gestión del foco: **Orden de lectura**
+## Gestión del foco: Orden de lectura
 
 ```kotlin
 TextButton(
@@ -433,7 +473,7 @@ TextButton(
 
 ---
 
-### Gestión del foco: **Propiedades**
+## Gestión del foco: Propiedades
 
 - Focus properties
   - **`previous`, `next`**: anterior y siguiente widget (navegación con tabulador)
@@ -444,7 +484,7 @@ TextButton(
 
 ---
 
-### Gestión del foco: **Grupos de Traversal**
+## Gestión del foco: Grupos de Traversal
 
 - Modificar el orden de accesibilidad sin focusRequester
   - **`Modifier.semantics { isTraversalGroup = true }`**: agrupa widgets semánticamente.
@@ -452,7 +492,7 @@ TextButton(
 
 ---
 
-### Alternativas a gestos
+# Alternativas a gestos
 
 - Problema: Swipe o Drag & Drop son difíciles para usuarios con movilidad reducida.
 
@@ -462,7 +502,7 @@ TextButton(
 
 ---
 
-### Alternativas a gestos: **Custom Actions**
+# Alternativas a gestos: **Custom Actions**
 
 - Solución: Añadir una acción semántica al menú de TalkBack.
 
@@ -482,7 +522,7 @@ MyComposable(
 
 ---
 
-### Cambios bruscos de contexto
+# Cambios bruscos de contexto
 #### **Anunciar cambios críticos**
 
 - Problema: Aparece un error o mensaje y el lector no lo anuncia porque no tiene el foco.
@@ -490,7 +530,7 @@ MyComposable(
 
 ---
 
-### Cambios bruscos de contexto
+# Cambios bruscos de contexto
 #### **Live Regions**
 
 - Compose
@@ -506,7 +546,7 @@ modifier = Modifier
 
 ---
 
-### Cambios bruscos de contexto
+# Cambios bruscos de contexto
 #### **Informar de elementos emergentes**
 
 - Usar widgets y composables estándares, derivados de:
@@ -516,7 +556,7 @@ modifier = Modifier
 
 ---
 
-### Carruseles accesibles
+# Carruseles accesibles
 
 <div class="flex justify-center">
 <img src="/carruseles-accesibles.png" width="1000" />
@@ -530,7 +570,7 @@ layout: center
 
 ---
 
-### 5.1 Testing manual
+# 5.1 Testing manual
 
 - TalkBack
 - Switch Access
@@ -538,7 +578,7 @@ layout: center
 
 ---
 
-### 5.2 Herramientas de análisis
+# 5.2 Herramientas de análisis
 
 - **Accessibility Scanner**
 
@@ -548,7 +588,7 @@ layout: center
 
 ---
 
-### 5.2 Herramientas de análisis
+# 5.2 Herramientas de análisis
 
 - **Android Studio**
   - Previews: Compose UI Check
@@ -559,7 +599,7 @@ layout: center
 
 ---
 
-### 5.2 Herramientas de análisis
+# 5.2 Herramientas de análisis
 
 - **Google Play Pre-launch report**
   - Análisis automático de accesibilidad al subir la app
@@ -570,8 +610,7 @@ layout: center
 
 ---
 
-### 5.3 Testing automatizado
-
+# 5.3 Testing automatizado
 ```kotlin
 @OptIn(ExperimentalTestApi::class)
 @Test
@@ -587,7 +626,7 @@ fun myComposeTest(): Unit = runComposeUiTest {
 
 ---
 
-### 5.3 Testing automatizado: Comprobar accesibilidad
+# 5.3 Testing automatizado: Comprobar accesibilidad
 
 - Verificar roles semánticos en tests de UI:
 
@@ -603,7 +642,7 @@ composeTestRule
 
 ---
 
-### 5.4 Buenas prácticas
+# 5.4 Buenas prácticas
 
 - **Testing con usuarios reales**
   - Realizar pruebas con personas con discapacidad
@@ -612,7 +651,7 @@ composeTestRule
 
 ---
 
-### 5.4 Buenas prácticas
+# 5.4 Buenas prácticas
 
 - **Proceso continuo**
   - Integrar el testing de accesibilidad en el CI/CD
@@ -627,7 +666,7 @@ layout: center
 
 ---
 
-### Conclusiones
+# Conclusiones
 
 + La accesibilidad es un **derecho**, no una opción
 + Diseñar con accesibilidad desde el principio
