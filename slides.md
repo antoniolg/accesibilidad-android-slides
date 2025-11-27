@@ -277,6 +277,37 @@ background: /section-recipes-bg.png
 
 ---
 
+# En este bloque...
+
+<div class="grid grid-cols-3 gap-8 mt-20">
+  <div class="flex flex-col items-center p-8 rounded-2xl bg-slate-800/50 border border-emerald-500/30 backdrop-blur-sm">
+    <div class="text-6xl mb-6">🎨</div>
+    <h2 class="text-2xl font-bold text-emerald-400 text-center">Diseño<br>accesible</h2>
+  </div>
+
+  <div class="flex flex-col items-center p-8 rounded-2xl bg-slate-800/50 border border-blue-500/30 backdrop-blur-sm">
+    <div class="text-6xl mb-6">📝</div>
+    <h2 class="text-2xl font-bold text-blue-400 text-center">Contenido<br>accesible</h2>
+  </div>
+
+  <div class="flex flex-col items-center p-8 rounded-2xl bg-slate-800/50 border border-purple-500/30 backdrop-blur-sm">
+    <div class="text-6xl mb-6">👆</div>
+    <h2 class="text-2xl font-bold text-purple-400 text-center">Interacción<br>accesible</h2>
+  </div>
+</div>
+
+---
+layout: center
+background: /section-recipes-bg.png
+---
+
+<div class="flex flex-col items-center p-16 rounded-3xl bg-slate-800/60 border border-emerald-500/40 backdrop-blur-md shadow-2xl">
+  <div class="text-8xl mb-8">🎨</div>
+  <h1 class="text-5xl font-bold text-emerald-400 text-center !mb-0 leading-tight">Diseño<br>accesible</h1>
+</div>
+
+---
+
 # 4.1 Diseño accesible
 
 <div class="grid grid-cols-2 gap-12 items-center">
@@ -336,57 +367,90 @@ background: /section-recipes-bg.png
 </div>
 
 ---
+layout: center
+background: /section-recipes-bg.png
+---
 
-# 4.2 Semántica: Descripciones útiles
-
-- En widgets de Compose obligatorios
-
-```kotlin
-Icon(
-    imageVector = Icons.Filled.Favorite,
-    contentDescription = stringResource(id = R.string.favorite),
-)
-```
+<div class="flex flex-col items-center p-16 rounded-3xl bg-slate-800/60 border border-blue-500/40 backdrop-blur-md shadow-2xl">
+  <div class="text-8xl mb-8">📝</div>
+  <h1 class="text-5xl font-bold text-blue-400 text-center !mb-0 leading-tight">Contenido<br>accesible</h1>
+</div>
 
 ---
 
-# 4.2 Semántica: Descripciones útiles
+# 4.2 Contenido: Descripciones útiles
 
-- En widgets de Compose donde no es obligatorio
+<div class="grid grid-cols-2 gap-4 mt-8">
+  <div class="p-4 rounded-xl border border-blue-400/50 bg-blue-900/20 backdrop-blur-sm flex flex-col h-full">
+    <h2 class="text-xl font-bold text-blue-300 mb-2">En widgets de Compose obligatorios</h2>
+    <div class="bg-slate-900 rounded-lg p-3 font-mono text-xs text-slate-200 leading-tight flex-grow overflow-x-auto">
+```kotlin
+Icon(
+    imageVector = Icons.Filled.Favorite,
+    // Obligatorio en componentes visuales como Icon e Image
+    contentDescription = stringResource(id = R.string.favorite),
+)
+```
+    </div>
+  </div>
 
+  <div class="p-4 rounded-xl border border-emerald-400/50 bg-emerald-900/20 backdrop-blur-sm flex flex-col h-full">
+    <h2 class="text-xl font-bold text-emerald-300 mb-2">En widgets de Compose donde no es obligatorio</h2>
+    <div class="bg-slate-900 rounded-lg p-3 font-mono text-xs text-slate-200 leading-tight flex-grow overflow-x-auto">
 ```kotlin
 Text(
     text = "This is a text",
     modifier = Modifier
-      .semantics { contentDescription = "This is a text" }
+      .semantics { 
+          // Añadimos descripción explícita si el texto no es suficiente
+          contentDescription = "This is a text" 
+      }
 )
 ```
+    </div>
+  </div>
+</div>
 
 ---
 
-# 4.2 Semántica: Elementos decorativos
+# 4.2 Contenido: Elementos decorativos
 
-- Si el elemento es solo decorativo, debemos ocultarlo al lector:
-
+<div class="grid grid-cols-2 gap-8 mt-10">
+  <div class="p-6 rounded-xl border border-rose-400/50 bg-rose-900/20 backdrop-blur-sm">
+    <h2 class="text-2xl font-bold text-rose-300 mb-4">Ocultar Iconos</h2>
+    <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
 ```kotlin
 Icon(
     imageVector = Icons.Filled.Favorite,
     contentDescription = null,
 )
+```
+    </div>
+  </div>
 
+  <div class="p-6 rounded-xl border border-purple-400/50 bg-purple-900/20 backdrop-blur-sm">
+    <h2 class="text-2xl font-bold text-purple-300 mb-4">Ocultar Texto/Composables</h2>
+    <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
+```kotlin
 Text(
-        text = "Hide from accessibility"
+        text = "Hide from accessibility",
         modifier = Modifier.semantics { hideFromAccessibilty = true }
 )
 ```
+    </div>
+  </div>
+</div>
 
 ---
 
-# 4.2 Semántica: Agrupación de elementos
+# 4.2 Contenido: Agrupación de elementos
 
-- Problema: TalkBack lee cada texto por separado.
-- Solución: `mergeDescendants`
-
+<div class="grid grid-cols-2 gap-12 items-center mt-10">
+  <div class="text-left">
+    <h2 class="text-3xl font-bold text-amber-300 mb-4">Problema</h2>
+    <p class="text-xl text-slate-200 mb-6">TalkBack lee cada texto por separado, fragmentando la información de un mismo elemento.</p>
+    <h2 class="text-3xl font-bold text-emerald-300 mb-4">Solución: <code class="text-emerald-300">mergeDescendants</code></h2>
+    <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
 ```kotlin
 Column(
     Modifier.semantics(mergeDescendants = true){}
@@ -395,26 +459,25 @@ Column(
     Text ("Description for item 1.")
 }
 ```
-
-<div class="flex justify-center">
-<img src="/CleanShot 2025-03-27 at 11.32.55.png" width="800" />
+    </div>
+  </div>
+  <div class="flex justify-center">
+    <img src="/CleanShot 2025-03-27 at 11.32.55.png" width="500" class="rounded-xl shadow-2xl border border-slate-700/50" />
+  </div>
 </div>
 
 ---
 
-# 4.2 Semántica: Navegación por Encabezados
+# 4.2 Contenido: Navegación por Encabezados
 
-<div class="flex justify-center">
-<img src="/talkback-encabezados.png" width="700" />
-</div>
-
----
-
-# 4.2 Semántica: Encabezados
-
-- Permite al usuario saltar rápidamente entre secciones.
-<br/>
-
+<div class="grid grid-cols-2 gap-12 items-center mt-10">
+  <div class="flex justify-center">
+    <img src="/talkback-encabezados.png" width="500" class="rounded-xl shadow-2xl border border-slate-700/50" />
+  </div>
+  <div class="text-left">
+    <p class="text-xl text-slate-200 mb-6">Permite al usuario saltar rápidamente entre secciones, mejorando la navegación en contenido extenso.</p>
+    <h2 class="text-3xl font-bold text-emerald-300 mb-4">Uso de <code class="text-emerald-300">Modifier.semantics { heading() }</code></h2>
+    <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
 ```kotlin
 Text(
     text = item.title,
@@ -422,28 +485,64 @@ Text(
     modifier = Modifier.semantics { heading() }
 )
 ```
+    </div>
+  </div>
+</div>
+
+---
+layout: center
+background: /section-recipes-bg.png
+---
+
+<div class="flex flex-col items-center p-16 rounded-3xl bg-slate-800/60 border border-purple-500/40 backdrop-blur-md shadow-2xl">
+  <div class="text-8xl mb-8">👆</div>
+  <h1 class="text-5xl font-bold text-purple-400 text-center !mb-0 leading-tight">Interacción<br>accesible</h1>
+</div>
 
 ---
 
 # 4.3 Interacción accesible
 
-- Gestión del foco
-- Alternativas a gestos
-- Manejo de cambios bruscos de contexto
+<div class="grid grid-cols-3 gap-8 mt-20">
+  <div class="flex flex-col items-center p-8 rounded-2xl bg-slate-800/50 border border-emerald-500/30 backdrop-blur-sm">
+    <div class="text-6xl mb-6">🎯</div>
+    <h2 class="text-2xl font-bold text-emerald-400 text-center">Gestión<br>del foco</h2>
+  </div>
+
+  <div class="flex flex-col items-center p-8 rounded-2xl bg-slate-800/50 border border-blue-500/30 backdrop-blur-sm">
+    <div class="text-6xl mb-6">👋</div>
+    <h2 class="text-2xl font-bold text-blue-400 text-center">Alternativas<br>a gestos</h2>
+  </div>
+
+  <div class="flex flex-col items-center p-8 rounded-2xl bg-slate-800/50 border border-rose-500/30 backdrop-blur-sm">
+    <div class="text-6xl mb-6">🔔</div>
+    <h2 class="text-2xl font-bold text-rose-400 text-center">Cambios bruscos<br>de contexto</h2>
+  </div>
+</div>
 
 ---
 
 # Gestión del foco
 
-- ⚠️ **Importante**: modificar el foco manualmente es un antipatrón
-  - Utilizarlo como último recurso
-
-- Es importante que el **diseño sea accesible** para evitar usar "trucos"
+<div class="flex flex-col items-center justify-center mt-10 gap-8">
+  <div class="bg-amber-400/10 border border-amber-400/50 p-6 rounded-lg max-w-2xl text-center backdrop-blur-md">
+    <h2 class="text-3xl font-bold text-amber-300 mb-2 flex items-center justify-center gap-2">
+      <span class="text-4xl">⚠️</span> ¡Antipatrón! Modificar el foco manualmente
+    </h2>
+    <p class="text-xl text-slate-200">
+      Utilizarlo solo como último recurso. Es crucial que el <b>diseño sea accesible</b> para evitar la necesidad de "trucos".
+    </p>
+  </div>
+</div>
 
 ---
 
 ## Gestión del foco: Orden de lectura
 
+<div class="grid grid-cols-2 gap-8 mt-10">
+  <div class="p-6 rounded-xl border border-blue-400/50 bg-blue-900/20 backdrop-blur-sm">
+    <h3 class="text-2xl font-bold text-blue-300 mb-4">Orden visual vs. orden de lectura</h3>
+    <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
 ```kotlin
 val (first, second, third, fourth) = remember { FocusRequester.createRefs() }
 
@@ -455,11 +554,12 @@ Column {
   TextButton({}, Modifier.focusRequester(fourth)) { Text("Fourth field") }
 }
 ```
+    </div>
+  </div>
 
----
-
-## Gestión del foco: Orden de lectura
-
+  <div class="p-6 rounded-xl border border-emerald-400/50 bg-emerald-900/20 backdrop-blur-sm">
+    <h3 class="text-2xl font-bold text-emerald-300 mb-4">Forzando el orden con `next`</h3>
+    <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
 ```kotlin
 TextButton(
     {},
@@ -470,42 +570,75 @@ TextButton(
     Text("First field")
 }
 ```
+    </div>
+  </div>
+</div>
 
 ---
 
 ## Gestión del foco: Propiedades
 
-- Focus properties
-  - **`previous`, `next`**: anterior y siguiente widget (navegación con tabulador)
-  - **`up`, `down`, `left`, `right`**: dirección del foco (navegación con teclas de dirección)
-  - **`start`, `end`**: izquierda y derecha para soporte RTL
-  - **`canFocus`**: si el widget puede recibir foco
-  - **`enter`, `exit`**: entrada y salida del widget. Recibe la dirección del foco
+<div class="grid grid-cols-2 gap-6 mt-10">
+  <div class="flex items-center gap-4 p-4 rounded-lg bg-slate-800/50 border border-slate-700">
+    <div class="text-4xl text-emerald-400">↔️</div>
+    <p class="text-lg text-slate-200"><code>previous</code>, <code>next</code>: Navegación lineal (tabulador)</p>
+  </div>
+  <div class="flex items-center gap-4 p-4 rounded-lg bg-slate-800/50 border border-slate-700">
+    <div class="text-4xl text-blue-400">↕️</div>
+    <p class="text-lg text-slate-200"><code>up</code>, <code>down</code>, <code>left</code>, <code>right</code>: Navegación direccional</p>
+  </div>
+  <div class="flex items-center gap-4 p-4 rounded-lg bg-slate-800/50 border border-slate-700">
+    <div class="text-4xl text-rose-400">➡️</div>
+    <p class="text-lg text-slate-200"><code>start</code>, <code>end</code>: Soporte RTL</p>
+  </div>
+  <div class="flex items-center gap-4 p-4 rounded-lg bg-slate-800/50 border border-slate-700">
+    <div class="text-4xl text-purple-400">✅</div>
+    <p class="text-lg text-slate-200"><code>canFocus</code>: Si el widget puede recibir foco</p>
+  </div>
+  <div class="flex items-center gap-4 p-4 rounded-lg bg-slate-800/50 border border-slate-700 col-span-2">
+    <div class="text-4xl text-amber-400">🚪</div>
+    <p class="text-lg text-slate-200"><code>enter</code>, <code>exit</code>: Entrada y salida del widget (recibe dirección)</p>
+  </div>
+</div>
 
 ---
 
 ## Gestión del foco: Grupos de Traversal
 
-- Modificar el orden de accesibilidad sin focusRequester
-  - **`Modifier.semantics { isTraversalGroup = true }`**: agrupa widgets semánticamente.
-  - **`Modifier.semantics { traversalIndex = 1f }`**: prioriza el orden de lectura (float).
+<div class="grid grid-cols-2 gap-8 mt-10">
+  <div class="p-6 rounded-xl border border-blue-400/50 bg-blue-900/20 backdrop-blur-sm">
+    <h3 class="text-2xl font-bold text-blue-300 mb-4"><code class="text-emerald-300">isTraversalGroup = true</code></h3>
+    <p class="text-lg text-slate-200">Agrupa widgets semánticamente, permitiendo que el foco se mueva entre ellos como un único bloque antes de pasar a otros grupos.</p>
+  </div>
+  <div class="p-6 rounded-xl border border-emerald-400/50 bg-emerald-900/20 backdrop-blur-sm">
+    <h3 class="text-2xl font-bold text-emerald-300 mb-4"><code class="text-emerald-300">traversalIndex = 1f</code></h3>
+    <p class="text-lg text-slate-200">Prioriza el orden de lectura de los elementos dentro de un grupo o en la pantalla. Utiliza un valor flotante para mayor flexibilidad.</p>
+  </div>
+</div>
 
 ---
 
 # Alternativas a gestos
 
-- Problema: Swipe o Drag & Drop son difíciles para usuarios con movilidad reducida.
-
-<div class="flex justify-center">
-<img src="/swipe-to-reveal.png" width="1200" />
+<div class="grid grid-cols-2 gap-12 items-center mt-10">
+  <div class="text-left">
+    <h2 class="text-3xl font-bold text-amber-300 mb-4">Problema</h2>
+    <p class="text-xl text-slate-200 mb-6">Gestos como Swipe o Drag & Drop son difíciles de realizar para usuarios con movilidad reducida o que utilizan tecnologías de asistencia.</p>
+    <h2 class="text-3xl font-bold text-emerald-300 mb-4">Solución</h2>
+    <p class="text-xl text-slate-200">Ofrecer alternativas interactivas que no dependan de gestos complejos.</p>
+  </div>
+  <div class="flex justify-center">
+    <img src="/swipe-to-reveal.png" width="500" class="rounded-xl shadow-2xl border border-slate-700/50" />
+  </div>
 </div>
 
 ---
 
-# Alternativas a gestos: **Custom Actions**
+# Alternativas a gestos: Custom Actions
 
-- Solución: Añadir una acción semántica al menú de TalkBack.
-
+<div class="flex flex-col items-center mt-10 gap-8">
+  <h2 class="text-3xl font-bold text-emerald-300 mb-4">Solución: Añadir acciones semánticas al menú de TalkBack</h2>
+  <div class="w-full max-w-3xl bg-slate-900 rounded-lg p-6 font-mono text-sm text-slate-200 leading-relaxed shadow-lg border border-slate-700/50">
 ```kotlin
 
 MyComposable(
@@ -519,160 +652,260 @@ MyComposable(
       }
 )
 ```
+  </div>
+</div>
 
 ---
 
 # Cambios bruscos de contexto
-#### **Anunciar cambios críticos**
 
-- Problema: Aparece un error o mensaje y el lector no lo anuncia porque no tiene el foco.
-- Solución: **Live Regions**.
+<div class="grid grid-cols-2 gap-12 items-start mt-10">
+  <div class="text-left">
+    <h2 class="text-3xl font-bold text-amber-300 mb-4">Problema: Anunciar cambios críticos</h2>
+    <p class="text-xl text-slate-200 mb-6">Cuando aparece un error o mensaje, el lector de pantalla puede no anunciarlo si no tiene el foco.</p>
 
----
-
-# Cambios bruscos de contexto
-#### **Live Regions**
-
-- Compose
+    <h2 class="text-3xl font-bold text-emerald-300 mb-4">Solución: Live Regions</h2>
+    <p class="text-xl text-slate-200 mb-4">Indican que un área se actualiza dinámicamente.</p>
+    <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
 
 ```kotlin
 modifier = Modifier
     .semantics {
-        // Assertive: Interrumpe la lectura actual (¡Urgente!)
-        // Polite: Espera a terminar la frase actual.
+        // Assertive: Interrumpe la lectura actual
+        // Polite: Espera a terminar la frase actual
         liveRegion = LiveRegionMode.Assertive
     }
 ```
+    </div>
+  </div>
 
----
+  <div class="text-left">
+    <h2 class="text-3xl font-bold text-blue-300 mb-4">Informar de elementos emergentes</h2>
+    <p class="text-xl text-slate-200 mb-6">Utiliza widgets estándar para Popups y Dialogs, y proporciona un título semántico.</p>
+    <ul class="text-xl space-y-4 text-slate-200">
+      <li><b>Popup</b>: para mensajes emergentes o menús.</li>
+      <li><b>Dialog</b>: para mensajes de confirmación.</li>
+      <li>Añade <code class="text-emerald-300">paneTitle</code> en la semántica.</li>
+    </ul>
+    <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed mt-4">
 
-# Cambios bruscos de contexto
-#### **Informar de elementos emergentes**
-
-- Usar widgets y composables estándares, derivados de:
-  - **Popup**: para mensajes emergentes o menús
-  - **Dialog**: para mensajes de confirmación
--  `Modifier.semantics { paneTitle = "Título de la ventana" }`
+```kotlin
+Modifier.semantics { 
+    paneTitle = "Título de la ventana" 
+}
+```
+    </div>
+  </div>
+</div>
 
 ---
 
 # Carruseles accesibles
 
-<div class="flex justify-center">
-<img src="/carruseles-accesibles.png" width="1000" />
+<div class="flex flex-col items-center mt-10 gap-8">
+  <h2 class="text-3xl font-bold text-emerald-300 mb-4">Asegurando la navegación y el contenido en carruseles</h2>
+  <div class="flex justify-center transform hover:scale-105 transition-transform duration-500">
+    <img src="/carruseles-accesibles.png" width="800" class="rounded-xl shadow-2xl border border-slate-700/50" />
+  </div>
 </div>
 
 ---
 layout: center
 ---
 
-# 5. **Testing**
+<div class="flex flex-col items-center p-16 rounded-3xl bg-slate-800/60 border border-yellow-500/40 backdrop-blur-md shadow-2xl">
+  <div class="text-8xl mb-8">🧪</div>
+  <h1 class="text-5xl font-bold text-yellow-400 text-center !mb-0 leading-tight">Testing</h1>
+</div>
 
 ---
 
 # 5.1 Testing manual
 
-- TalkBack
-- Switch Access
-- Voice Access
-
----
-
-# 5.2 Herramientas de análisis
-
-- **Accessibility Scanner**
-
-<div class="flex justify-center">
-<img src="/accessibility-scanner.png" />
+<div class="grid grid-cols-3 gap-8 mt-10">
+  <div class="flex flex-col items-center p-6 rounded-xl border border-emerald-400/50 bg-emerald-900/20 backdrop-blur-sm">
+    <div class="text-6xl mb-4">🗣️</div>
+    <h3 class="text-xl font-bold text-emerald-300">TalkBack</h3>
+  </div>
+  <div class="flex flex-col items-center p-6 rounded-xl border border-blue-400/50 bg-blue-900/20 backdrop-blur-sm">
+    <div class="text-6xl mb-4">♿</div>
+    <h3 class="text-xl font-bold text-blue-300">Switch Access</h3>
+  </div>
+  <div class="flex flex-col items-center p-6 rounded-xl border border-rose-400/50 bg-rose-900/20 backdrop-blur-sm">
+    <div class="text-6xl mb-4">🎤</div>
+    <h3 class="text-xl font-bold text-rose-300">Voice Access</h3>
+  </div>
 </div>
 
 ---
 
 # 5.2 Herramientas de análisis
 
-- **Android Studio**
-  - Previews: Compose UI Check
+<div class="grid grid-cols-3 gap-8 mt-10">
+  <div class="flex flex-col items-center p-6 rounded-xl border border-emerald-400/50 bg-emerald-900/20 backdrop-blur-sm">
+    <h3 class="text-xl font-bold text-emerald-300 mb-4">Accessibility Scanner</h3>
+    <div class="flex justify-center mb-4">
+      <img src="/accessibility-scanner.png" width="200" class="rounded-lg shadow-lg border border-slate-700/50" />
+    </div>
+    <p class="text-sm text-slate-200 text-center">Herramienta de Google para encontrar problemas de accesibilidad.</p>
+  </div>
 
-<div class="flex justify-center">
-<img src="/compose-ui-check.png" />
-</div>
+  <div class="flex flex-col items-center p-6 rounded-xl border border-blue-400/50 bg-blue-900/20 backdrop-blur-sm">
+    <h3 class="text-xl font-bold text-blue-300 mb-4">Android Studio: Compose UI Check</h3>
+    <div class="flex justify-center mb-4">
+      <img src="/compose-ui-check.png" width="200" class="rounded-lg shadow-lg border border-slate-700/50" />
+    </div>
+    <p class="text-sm text-slate-200 text-center">Análisis automático de accesibilidad en Previews de Compose.</p>
+  </div>
 
----
-
-# 5.2 Herramientas de análisis
-
-- **Google Play Pre-launch report**
-  - Análisis automático de accesibilidad al subir la app
-
-<div class="flex justify-center">
-<img src="/pre-launch-report.png" width="1100" />
+  <div class="flex flex-col items-center p-6 rounded-xl border border-rose-400/50 bg-rose-900/20 backdrop-blur-sm">
+    <h3 class="text-xl font-bold text-rose-300 mb-4">Google Play Pre-launch report</h3>
+    <div class="flex justify-center mb-4">
+      <img src="/pre-launch-report.png" width="200" class="rounded-lg shadow-lg border border-slate-700/50" />
+    </div>
+    <p class="text-sm text-slate-200 text-center">Análisis automático al subir la app a Google Play.</p>
+  </div>
 </div>
 
 ---
 
 # 5.3 Testing automatizado
+
+
+
+<div class="grid grid-cols-2 gap-8 mt-10">
+
+  <div class="p-6 rounded-xl border border-blue-400/50 bg-blue-900/20 backdrop-blur-sm">
+
+    <h3 class="text-2xl font-bold text-blue-300 mb-4">Habilitar checks de accesibilidad</h3>
+
+    <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
+
 ```kotlin
+
 @OptIn(ExperimentalTestApi::class)
+
 @Test
+
 fun myComposeTest(): Unit = runComposeUiTest {
+
+
 
     enableAccessibilityChecks() // ¡Mágico!
 
+
+
         setContentView {
+
                 ...
+
         }
+
 }
+
 ```
 
----
+    </div>
 
-# 5.3 Testing automatizado: Comprobar accesibilidad
+    <p class="text-lg text-slate-200 mt-4">Activa las comprobaciones automáticas de accesibilidad en tus tests de UI.</p>
 
-- Verificar roles semánticos en tests de UI:
+  </div>
+
+
+
+  <div class="p-6 rounded-xl border border-emerald-400/50 bg-emerald-900/20 backdrop-blur-sm">
+
+    <h3 class="text-2xl font-bold text-emerald-300 mb-4">Verificar roles semánticos</h3>
+
+    <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
 
 ```kotlin
+
 composeTestRule
+
     .onNodeWithText("My Button")
+
     .assert(
+
         SemanticsMatcher("has correct role") {
+
             it.config.getOrNull(SemanticsProperties.Role) == Role.Button
+
         },
+
     )
+
 ```
 
+    </div>
+
+    <p class="text-lg text-slate-200 mt-4">Asegura que los componentes tienen los roles de accesibilidad correctos.</p>
+
+  </div>
+
+</div>
+
 ---
 
 # 5.4 Buenas prácticas
 
-- **Testing con usuarios reales**
-  - Realizar pruebas con personas con discapacidad
-  - Obtener feedback directo
-  - Validar la experiencia real
+<div class="grid grid-cols-2 gap-8 mt-10">
+  <div class="p-6 rounded-xl border border-blue-400/50 bg-blue-900/20 backdrop-blur-sm">
+    <h3 class="text-2xl font-bold text-blue-300 mb-4">Testing con usuarios reales</h3>
+    <ul class="text-lg space-y-3 text-slate-200">
+      <li>Realizar pruebas con personas con discapacidad.</li>
+      <li>Obtener feedback directo.</li>
+      <li>Validar la experiencia real.</li>
+    </ul>
+  </div>
 
----
-
-# 5.4 Buenas prácticas
-
-- **Proceso continuo**
-  - Integrar el testing de accesibilidad en el CI/CD
-  - Realizar pruebas en cada release
-  - Mantener un registro de problemas y mejoras
+  <div class="p-6 rounded-xl border border-emerald-400/50 bg-emerald-900/20 backdrop-blur-sm">
+    <h3 class="text-2xl font-bold text-emerald-300 mb-4">Proceso continuo</h3>
+    <ul class="text-lg space-y-3 text-slate-200">
+      <li>Integrar el testing de accesibilidad en el CI/CD.</li>
+      <li>Realizar pruebas en cada release.</li>
+      <li>Mantener un registro de problemas y mejoras.</li>
+    </ul>
+  </div>
+</div>
 
 ---
 layout: center
 ---
 
-# 6. **Conclusiones**
+<div class="flex flex-col items-center p-16 rounded-3xl bg-slate-800/60 border border-teal-500/40 backdrop-blur-md shadow-2xl">
+  <div class="text-8xl mb-8">✨</div>
+  <h1 class="text-5xl font-bold text-teal-400 text-center !mb-0 leading-tight">Conclusiones</h1>
+</div>
 
 ---
 
 # Conclusiones
 
-+ La accesibilidad es un **derecho**, no una opción
-+ Diseñar con accesibilidad desde el principio
-+ Usar componentes estándar siempre que sea posible
-+ Testear la accesibilidad de forma continua
-+ Escuchar a los usuarios y mejorar constantemente
+<div class="mt-10 max-w-4xl mx-auto">
+  <ul class="text-xl space-y-6 text-slate-200">
+    <li class="flex items-start gap-3">
+      <span class="text-emerald-400 text-3xl">✅</span>
+      <span>La accesibilidad es un <b>derecho</b>, no una opción.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-blue-400 text-3xl">✨</span>
+      <span>Diseñar con accesibilidad desde el principio.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-purple-400 text-3xl">🧩</span>
+      <span>Usar componentes estándar siempre que sea posible.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-yellow-400 text-3xl">🧪</span>
+      <span>Testear la accesibilidad de forma continua.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-rose-400 text-3xl">👂</span>
+      <span>Escuchar a los usuarios y mejorar constantemente.</span>
+    </li>
+  </ul>
+</div>
 
 ---
 layout: about-me
