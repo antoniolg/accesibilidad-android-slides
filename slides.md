@@ -5,8 +5,17 @@ themeConfig:
   default-font-size: 1em
 ---
 
-# Apps Android Accesibles
-## Conviértete en un desarrollador triple-A
+# Accesibilidad en Android
+## Guía completa para desarrolladores
+<br/>
+
+<div class="flex items-center gap-6 m-6">
+  <img src="/proxyhands_qr.png" width="150" alt="QR Code for ProxyHands" class="rounded-lg shadow-lg border border-slate-700/50" />
+  <div class="flex flex-col text-left gap-3">
+    <div class="text-2xl text-yellow-500">ProxyHands</div>
+    <div class="text-2xl text-yellow-500 font-bold">APP1</div>
+  </div>
+</div>
 
 <div class="absolute right-12 bottom-12 flex items-center gap-4">
   <div class="h-20 w-20 overflow-hidden rounded-full border border-emerald-400/80">
