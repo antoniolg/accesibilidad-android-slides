@@ -5,8 +5,8 @@ themeConfig:
   default-font-size: 1em
 ---
 
-# Accesibilidad en Android
-## Guía completa para desarrolladores
+# Apps Android Accesibles
+## Conviértete en un desarrollador triple-A
 
 <div class="absolute right-12 bottom-12 flex items-center gap-4">
   <div class="h-20 w-20 overflow-hidden rounded-full border border-emerald-400/80">
