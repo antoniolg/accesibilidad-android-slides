@@ -39,11 +39,11 @@ background: /section-recipes-bg.png
 ---
 
 # Accesibilidad en Android
-## Cómo funciona
+## 1. Cómo funciona
 
 ---
 
-# **Android** no es web
+# 1.1 **Android** no es web
 
 <div class="flex justify-center">
 <img src="/ajustes_accesibilidad.png" width="550" />
@@ -51,7 +51,7 @@ background: /section-recipes-bg.png
 
 ---
 
-# TalkBack: Navegación sin vista
+# 1.2 TalkBack: Navegación sin vista
 
 <div class="grid grid-cols-2 gap-8 items-center">
   <div class="flex justify-center">
@@ -68,7 +68,7 @@ background: /section-recipes-bg.png
 
 ---
 
-# Switch Access: Movilidad Reducida
+# 1.3 Switch Access: Movilidad Reducida
 
 <div class="grid grid-cols-2 gap-8 items-center">
   <div class="flex justify-center">
@@ -84,7 +84,7 @@ background: /section-recipes-bg.png
 
 ---
 
-# Voice Access: Manos Libres
+# 1.4 Voice Access: Manos Libres
 
 <div class="grid grid-cols-2 gap-8 items-center">
   <div class="flex justify-center">
@@ -101,7 +101,7 @@ background: /section-recipes-bg.png
 
 ---
 
-# Buenas prácticas
+# 2. Principios fundamentales
 
 <div class="grid grid-cols-3 gap-8 mt-12">
   <div class="p-6 rounded-xl border border-slate-200/20 bg-slate-800/30 backdrop-blur-sm">
@@ -134,12 +134,12 @@ layout: center
 background: /section-recipes-bg.png
 ---
 
-# **Jetpack Compose**
+# 3. **Jetpack Compose**
 ## Accesibilidad en el sistema de interfaces
 
 ---
 
-# Árbol de Accesibilidad y Semántica
+# 3.1 Árbol de Accesibilidad y Semántica
 
 <div class="grid grid-cols-2 gap-8 items-center">
   <div class="flex justify-center">
@@ -156,7 +156,7 @@ background: /section-recipes-bg.png
 
 ---
 
-# Debugging: Layout Inspector
+# 3.2 Debugging: Layout Inspector
 
 <div class="flex justify-center">
 <img src="/CleanShot 2025-01-21 at 17.01.59.png" />
@@ -164,7 +164,7 @@ background: /section-recipes-bg.png
 
 ---
 
-# APIs de accesibilidad: Semantics
+# 3.3 APIs: Semantics
 
 - Permite añadir/modificar información semántica de un Composable.
 - Se usa a través de `Modifier.semantics { ... }`
@@ -182,7 +182,7 @@ Text(
 
 ---
 
-# APIs de accesibilidad: Roles
+# 3.4 APIs: Roles
 
 <div class="grid grid-cols-2 gap-12 items-start mt-8">
   <div class="text-left">
@@ -225,7 +225,7 @@ Text(
 
 ---
 
-# Accesibilidad obligatoria por contrato
+# 3.5 Accesibilidad obligatoria por contrato
 
 <div class="flex flex-col items-center justify-center mt-10 gap-8">
   <div class="bg-amber-400/10 border border-amber-400/50 p-6 rounded-lg max-w-2xl text-center backdrop-blur-md">
@@ -252,7 +252,7 @@ layout: center
 background: /section-recipes-bg.png
 ---
 
-# **Recetas** de Accesibilidad
+# 4. **Recetas** de Accesibilidad
 
 ---
 
@@ -359,12 +359,12 @@ background: /section-recipes-bg.png
 
 # 4.2 Contenido: Descripciones útiles
 
-<div class="flex flex-col gap-6 mt-6">
+<div class="flex flex-col gap-4">
   <div class="grid grid-cols-[1fr_2fr] gap-6 items-center p-4 rounded-xl border border-blue-400/50 bg-blue-900/20 backdrop-blur-sm">
     <div>
       <h2 class="text-xl font-bold text-blue-300">En widgets de Compose obligatorios</h2>
     </div>
-    <div class="bg-slate-900 rounded-lg p-3 font-mono text-xs text-slate-200 leading-tight">
+    <div>
 ```kotlin
 Icon(
     imageVector = Icons.Filled.Favorite,
@@ -375,11 +375,11 @@ Icon(
     </div>
   </div>
 
-  <div class="grid grid-cols-[1fr_2fr] gap-6 items-center p-4 rounded-xl border border-emerald-400/50 bg-emerald-900/20 backdrop-blur-sm">
+  <div v-click class="grid grid-cols-[1fr_2fr] gap-6 items-center p-4 rounded-xl border border-emerald-400/50 bg-emerald-900/20 backdrop-blur-sm">
     <div>
       <h2 class="text-xl font-bold text-emerald-300">En widgets de Compose donde no es obligatorio</h2>
     </div>
-    <div class="bg-slate-900 rounded-lg p-3 font-mono text-xs text-slate-200 leading-tight">
+    <div>
 ```kotlin
 Text(
     text = "This is a text",
@@ -413,7 +413,7 @@ Icon(
     </div>
   </div>
 
-  <div class="grid grid-cols-[1fr_2fr] gap-6 items-center p-4 rounded-xl border border-purple-400/50 bg-purple-900/20 backdrop-blur-sm">
+  <div v-click class="grid grid-cols-[1fr_2fr] gap-6 items-center p-4 rounded-xl border border-purple-400/50 bg-purple-900/20 backdrop-blur-sm">
     <div>
       <h2 class="text-xl font-bold text-purple-300">Ocultar Texto/Composables</h2>
     </div>
@@ -464,7 +464,7 @@ Column(
   </div>
   <div class="text-left">
     <p class="text-xl text-slate-200 mb-6">Permite al usuario saltar rápidamente entre secciones, mejorando la navegación en contenido extenso.</p>
-    <h2 class="text-3xl font-bold text-emerald-300 mb-4">Uso de <code class="text-emerald-300">Modifier.semantics { heading() }</code></h2>
+    <p class="text-xl font-bold text-emerald-300 mb-4">Uso de</p><p class="text-xl"> <code class="text-emerald-300">Modifier.semantics { heading() }</code></p>
     <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
 ```kotlin
 Text(
@@ -525,16 +525,15 @@ background: /section-recipes-bg.png
 
 ---
 
-## Gestión del foco: Orden de lectura
+# Gestión del foco: Orden de lectura
 
-<div class="flex flex-col gap-8 mt-10">
-  <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
+<div class="flex flex-col gap-6">
+  <div>
 ```kotlin
 val (first, second, third, fourth) = remember { FocusRequester.createRefs() }
 
 Column {
   TextButton({}, Modifier.focusRequester(first)) { Text("First field") }
-  // Queremos saltar del 1º al 3º visualmente
   TextButton({}, Modifier.focusRequester(third)) { Text("Third field") }
   TextButton({}, Modifier.focusRequester(second)) { Text("Second field") }
   TextButton({}, Modifier.focusRequester(fourth)) { Text("Fourth field") }
@@ -542,7 +541,7 @@ Column {
 ```
   </div>
 
-  <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
+  <div v-click>
 ```kotlin
 TextButton(
     {},
@@ -558,9 +557,9 @@ TextButton(
 
 ---
 
-## Gestión del foco: Propiedades
+# Gestión del foco: Propiedades
 
-<div class="grid grid-cols-2 gap-6 mt-10">
+<div class="grid grid-cols-2 gap-6">
   <div class="flex items-center gap-4 p-4 rounded-lg bg-slate-800/50 border border-slate-700">
     <div class="text-4xl text-emerald-400">↔️</div>
     <p class="text-lg text-slate-200"><code>previous</code>, <code>next</code>: Navegación lineal (tabulador)</p>
@@ -579,22 +578,42 @@ TextButton(
   </div>
   <div class="flex items-center gap-4 p-4 rounded-lg bg-slate-800/50 border border-slate-700 col-span-2">
     <div class="text-4xl text-amber-400">🚪</div>
-    <p class="text-lg text-slate-200"><code>enter</code>, <code>exit</code>: Entrada y salida del widget (recibe dirección)</p>
+    <p class="text-lg text-slate-200"><code>enter</code>, <code>exit</code>: Eventos de entrada y salida del widget (recibe dirección)</p>
   </div>
 </div>
 
 ---
 
-## Gestión del foco: Grupos de Traversal
+# Gestión del foco: Grupos de Traversal
 
-<div class="grid grid-cols-2 gap-8 mt-10">
+<div class="grid grid-cols-2 gap-8">
   <div class="p-6 rounded-xl border border-blue-400/50 bg-blue-900/20 backdrop-blur-sm">
     <h3 class="text-2xl font-bold text-blue-300 mb-4"><code class="text-emerald-300">isTraversalGroup = true</code></h3>
-    <p class="text-lg text-slate-200">Agrupa widgets semánticamente, permitiendo que el foco se mueva entre ellos como un único bloque antes de pasar a otros grupos.</p>
+    <p class="text-lg text-slate-200 mb-4">Agrupa widgets semánticamente, permitiendo que el foco se mueva entre ellos como un único bloque antes de pasar a otros grupos.</p>
+    <div class="bg-slate-900 rounded-lg p-3 font-mono text-xs text-slate-200 leading-tight">
+```kotlin
+Row(Modifier.semantics { 
+  isTraversalGroup = true 
+}) {
+    Text("A")
+    Text("B")
+}
+```
+    </div>
   </div>
   <div class="p-6 rounded-xl border border-emerald-400/50 bg-emerald-900/20 backdrop-blur-sm">
     <h3 class="text-2xl font-bold text-emerald-300 mb-4"><code class="text-emerald-300">traversalIndex = 1f</code></h3>
-    <p class="text-lg text-slate-200">Prioriza el orden de lectura de los elementos dentro de un grupo o en la pantalla. Utiliza un valor flotante para mayor flexibilidad.</p>
+    <p class="text-lg text-slate-200 mb-4">Prioriza el orden de lectura de los elementos dentro de un grupo o en la pantalla. Utiliza un valor flotante para mayor flexibilidad.</p>
+    <div class="bg-slate-900 rounded-lg p-3 font-mono text-xs text-slate-200 leading-tight">
+```kotlin
+Text("Second", Modifier.semantics { 
+  traversalIndex = 2f 
+}))
+Text("First", Modifier.semantics { 
+  traversalIndex = 1f 
+})
+```
+    </div>
   </div>
 </div>
 
