@@ -276,27 +276,6 @@ background: /section-recipes-bg.png
 </div>
 
 ---
-
-# En este bloque...
-
-<div class="grid grid-cols-3 gap-8 mt-20">
-  <div class="flex flex-col items-center p-8 rounded-2xl bg-slate-800/50 border border-emerald-500/30 backdrop-blur-sm">
-    <div class="text-6xl mb-6">🎨</div>
-    <h2 class="text-2xl font-bold text-emerald-400 text-center">Diseño<br>accesible</h2>
-  </div>
-
-  <div class="flex flex-col items-center p-8 rounded-2xl bg-slate-800/50 border border-blue-500/30 backdrop-blur-sm">
-    <div class="text-6xl mb-6">📝</div>
-    <h2 class="text-2xl font-bold text-blue-400 text-center">Contenido<br>accesible</h2>
-  </div>
-
-  <div class="flex flex-col items-center p-8 rounded-2xl bg-slate-800/50 border border-purple-500/30 backdrop-blur-sm">
-    <div class="text-6xl mb-6">👆</div>
-    <h2 class="text-2xl font-bold text-purple-400 text-center">Interacción<br>accesible</h2>
-  </div>
-</div>
-
----
 layout: center
 background: /section-recipes-bg.png
 ---
@@ -310,7 +289,7 @@ background: /section-recipes-bg.png
 
 # 4.1 Diseño accesible
 
-<div class="grid grid-cols-2 gap-12 items-center">
+<div class="grid grid-cols-2 gap-12 items-center mt-10">
   <div class="text-left">
     <h2 class="!text-4xl leading-tight">Cada componente de UI tiene sus <b>guidelines</b> y <b>guías de accesibilidad</b></h2>
   </div>
@@ -324,7 +303,7 @@ background: /section-recipes-bg.png
 # 4.1 Diseño: El problema del contraste
 
 <div class="flex justify-center">
-<img src="/CleanShot 2025-03-26 at 17.14.05@2x.png" width="700" />
+<img src="/CleanShot 2025-03-26 at 17.14.05@2x.png" width="800" />
 </div>
 
 ---
@@ -380,10 +359,12 @@ background: /section-recipes-bg.png
 
 # 4.2 Contenido: Descripciones útiles
 
-<div class="grid grid-cols-2 gap-4 mt-8">
-  <div class="p-4 rounded-xl border border-blue-400/50 bg-blue-900/20 backdrop-blur-sm flex flex-col h-full">
-    <h2 class="text-xl font-bold text-blue-300 mb-2">En widgets de Compose obligatorios</h2>
-    <div class="bg-slate-900 rounded-lg p-3 font-mono text-xs text-slate-200 leading-tight flex-grow overflow-x-auto">
+<div class="flex flex-col gap-6 mt-6">
+  <div class="grid grid-cols-[1fr_2fr] gap-6 items-center p-4 rounded-xl border border-blue-400/50 bg-blue-900/20 backdrop-blur-sm">
+    <div>
+      <h2 class="text-xl font-bold text-blue-300">En widgets de Compose obligatorios</h2>
+    </div>
+    <div class="bg-slate-900 rounded-lg p-3 font-mono text-xs text-slate-200 leading-tight">
 ```kotlin
 Icon(
     imageVector = Icons.Filled.Favorite,
@@ -394,9 +375,11 @@ Icon(
     </div>
   </div>
 
-  <div class="p-4 rounded-xl border border-emerald-400/50 bg-emerald-900/20 backdrop-blur-sm flex flex-col h-full">
-    <h2 class="text-xl font-bold text-emerald-300 mb-2">En widgets de Compose donde no es obligatorio</h2>
-    <div class="bg-slate-900 rounded-lg p-3 font-mono text-xs text-slate-200 leading-tight flex-grow overflow-x-auto">
+  <div class="grid grid-cols-[1fr_2fr] gap-6 items-center p-4 rounded-xl border border-emerald-400/50 bg-emerald-900/20 backdrop-blur-sm">
+    <div>
+      <h2 class="text-xl font-bold text-emerald-300">En widgets de Compose donde no es obligatorio</h2>
+    </div>
+    <div class="bg-slate-900 rounded-lg p-3 font-mono text-xs text-slate-200 leading-tight">
 ```kotlin
 Text(
     text = "This is a text",
@@ -415,10 +398,12 @@ Text(
 
 # 4.2 Contenido: Elementos decorativos
 
-<div class="grid grid-cols-2 gap-8 mt-10">
-  <div class="p-6 rounded-xl border border-rose-400/50 bg-rose-900/20 backdrop-blur-sm">
-    <h2 class="text-2xl font-bold text-rose-300 mb-4">Ocultar Iconos</h2>
-    <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
+<div class="flex flex-col gap-6 mt-6">
+  <div class="grid grid-cols-[1fr_2fr] gap-6 items-center p-4 rounded-xl border border-rose-400/50 bg-rose-900/20 backdrop-blur-sm">
+    <div>
+      <h2 class="text-xl font-bold text-rose-300">Ocultar Iconos</h2>
+    </div>
+    <div class="bg-slate-900 rounded-lg p-3 font-mono text-sm text-slate-200 leading-relaxed">
 ```kotlin
 Icon(
     imageVector = Icons.Filled.Favorite,
@@ -428,9 +413,11 @@ Icon(
     </div>
   </div>
 
-  <div class="p-6 rounded-xl border border-purple-400/50 bg-purple-900/20 backdrop-blur-sm">
-    <h2 class="text-2xl font-bold text-purple-300 mb-4">Ocultar Texto/Composables</h2>
-    <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
+  <div class="grid grid-cols-[1fr_2fr] gap-6 items-center p-4 rounded-xl border border-purple-400/50 bg-purple-900/20 backdrop-blur-sm">
+    <div>
+      <h2 class="text-xl font-bold text-purple-300">Ocultar Texto/Composables</h2>
+    </div>
+    <div class="bg-slate-900 rounded-lg p-3 font-mono text-sm text-slate-200 leading-relaxed">
 ```kotlin
 Text(
         text = "Hide from accessibility",
@@ -445,12 +432,16 @@ Text(
 
 # 4.2 Contenido: Agrupación de elementos
 
-<div class="grid grid-cols-2 gap-12 items-center mt-10">
+<div class="grid grid-cols-2 gap-12 items-start mt-10">
   <div class="text-left">
     <h2 class="text-3xl font-bold text-amber-300 mb-4">Problema</h2>
     <p class="text-xl text-slate-200 mb-6">TalkBack lee cada texto por separado, fragmentando la información de un mismo elemento.</p>
     <h2 class="text-3xl font-bold text-emerald-300 mb-4">Solución: <code class="text-emerald-300">mergeDescendants</code></h2>
-    <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
+    <p class="text-xl text-slate-200">Agrupa semánticamente los elementos para que se lean como una única unidad coherente.</p>
+  </div>
+  <div class="flex flex-col gap-8 justify-center items-center">
+    <img src="/CleanShot 2025-03-27 at 11.32.55.png" width="500" class="rounded-xl shadow-2xl border border-slate-700/50" />
+    <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed w-full max-w-md">
 ```kotlin
 Column(
     Modifier.semantics(mergeDescendants = true){}
@@ -460,9 +451,6 @@ Column(
 }
 ```
     </div>
-  </div>
-  <div class="flex justify-center">
-    <img src="/CleanShot 2025-03-27 at 11.32.55.png" width="500" class="rounded-xl shadow-2xl border border-slate-700/50" />
   </div>
 </div>
 
@@ -539,10 +527,8 @@ background: /section-recipes-bg.png
 
 ## Gestión del foco: Orden de lectura
 
-<div class="grid grid-cols-2 gap-8 mt-10">
-  <div class="p-6 rounded-xl border border-blue-400/50 bg-blue-900/20 backdrop-blur-sm">
-    <h3 class="text-2xl font-bold text-blue-300 mb-4">Orden visual vs. orden de lectura</h3>
-    <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
+<div class="flex flex-col gap-8 mt-10">
+  <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
 ```kotlin
 val (first, second, third, fourth) = remember { FocusRequester.createRefs() }
 
@@ -554,12 +540,9 @@ Column {
   TextButton({}, Modifier.focusRequester(fourth)) { Text("Fourth field") }
 }
 ```
-    </div>
   </div>
 
-  <div class="p-6 rounded-xl border border-emerald-400/50 bg-emerald-900/20 backdrop-blur-sm">
-    <h3 class="text-2xl font-bold text-emerald-300 mb-4">Forzando el orden con `next`</h3>
-    <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
+  <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
 ```kotlin
 TextButton(
     {},
@@ -570,7 +553,6 @@ TextButton(
     Text("First field")
 }
 ```
-    </div>
   </div>
 </div>
 
@@ -659,14 +641,15 @@ MyComposable(
 
 # Cambios bruscos de contexto
 
-<div class="grid grid-cols-2 gap-12 items-start mt-10">
-  <div class="text-left">
-    <h2 class="text-3xl font-bold text-amber-300 mb-4">Problema: Anunciar cambios críticos</h2>
-    <p class="text-xl text-slate-200 mb-6">Cuando aparece un error o mensaje, el lector de pantalla puede no anunciarlo si no tiene el foco.</p>
+<div class="grid grid-cols-2 gap-12 items-start">
 
-    <h2 class="text-3xl font-bold text-emerald-300 mb-4">Solución: Live Regions</h2>
-    <p class="text-xl text-slate-200 mb-4">Indican que un área se actualiza dinámicamente.</p>
-    <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
+<div>
+
+<p class="text-2xl font-bold text-amber-300 mb-4">Problema: Anunciar cambios críticos</p>
+<p class="text-xl text-slate-200 mb-6">Cuando aparece un error o mensaje, el lector de pantalla puede no anunciarlo si no tiene el foco.</p>
+
+<p class="text-2xl font-bold text-emerald-300 mb-4">Solución: Live Regions</p>
+<p class="text-xl text-slate-200 mb-4">Indican que un área se actualiza dinámicamente.</p>
 
 ```kotlin
 modifier = Modifier
@@ -676,37 +659,34 @@ modifier = Modifier
         liveRegion = LiveRegionMode.Assertive
     }
 ```
-    </div>
-  </div>
 
-  <div class="text-left">
-    <h2 class="text-3xl font-bold text-blue-300 mb-4">Informar de elementos emergentes</h2>
-    <p class="text-xl text-slate-200 mb-6">Utiliza widgets estándar para Popups y Dialogs, y proporciona un título semántico.</p>
-    <ul class="text-xl space-y-4 text-slate-200">
-      <li><b>Popup</b>: para mensajes emergentes o menús.</li>
-      <li><b>Dialog</b>: para mensajes de confirmación.</li>
-      <li>Añade <code class="text-emerald-300">paneTitle</code> en la semántica.</li>
-    </ul>
-    <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed mt-4">
+</div>
+
+<div v-click>
+
+<p class="text-2xl font-bold text-blue-300 mb-4">Informar de elementos emergentes</p>
+<ul class="text-xl text-slate-200 mb-4">
+    <li><b>Popup</b>: para mensajes emergentes o menús.</li>
+    <li><b>Dialog</b>: para mensajes de confirmación.</li>
+    <li>Añade <code class="text-emerald-300">paneTitle</code> en la semántica.</li>
+</ul>
 
 ```kotlin
 Modifier.semantics { 
     paneTitle = "Título de la ventana" 
 }
 ```
-    </div>
-  </div>
+
+</div>
+
 </div>
 
 ---
 
 # Carruseles accesibles
 
-<div class="flex flex-col items-center mt-10 gap-8">
-  <h2 class="text-3xl font-bold text-emerald-300 mb-4">Asegurando la navegación y el contenido en carruseles</h2>
-  <div class="flex justify-center transform hover:scale-105 transition-transform duration-500">
-    <img src="/carruseles-accesibles.png" width="800" class="rounded-xl shadow-2xl border border-slate-700/50" />
-  </div>
+<div class="flex flex-col items-center">
+  <img src="/carruseles-accesibles.png" width="700" />
 </div>
 
 ---
@@ -741,9 +721,9 @@ layout: center
 
 # 5.2 Herramientas de análisis
 
-<div class="grid grid-cols-3 gap-8 mt-10">
+<div class="grid grid-cols-3 gap-8">
   <div class="flex flex-col items-center p-6 rounded-xl border border-emerald-400/50 bg-emerald-900/20 backdrop-blur-sm">
-    <h3 class="text-xl font-bold text-emerald-300 mb-4">Accessibility Scanner</h3>
+    <p class="text-xl font-bold text-emerald-300 mb-4">Accessibility Scanner</p>
     <div class="flex justify-center mb-4">
       <img src="/accessibility-scanner.png" width="200" class="rounded-lg shadow-lg border border-slate-700/50" />
     </div>
@@ -751,7 +731,7 @@ layout: center
   </div>
 
   <div class="flex flex-col items-center p-6 rounded-xl border border-blue-400/50 bg-blue-900/20 backdrop-blur-sm">
-    <h3 class="text-xl font-bold text-blue-300 mb-4">Android Studio: Compose UI Check</h3>
+    <p class="text-xl font-bold text-blue-300 mb-4">Android Studio: Compose UI Check</p>
     <div class="flex justify-center mb-4">
       <img src="/compose-ui-check.png" width="200" class="rounded-lg shadow-lg border border-slate-700/50" />
     </div>
@@ -759,7 +739,7 @@ layout: center
   </div>
 
   <div class="flex flex-col items-center p-6 rounded-xl border border-rose-400/50 bg-rose-900/20 backdrop-blur-sm">
-    <h3 class="text-xl font-bold text-rose-300 mb-4">Google Play Pre-launch report</h3>
+    <p class="text-xl font-bold text-rose-300 mb-4">Google Play Pre-launch report</p>
     <div class="flex justify-center mb-4">
       <img src="/pre-launch-report.png" width="200" class="rounded-lg shadow-lg border border-slate-700/50" />
     </div>
@@ -771,78 +751,41 @@ layout: center
 
 # 5.3 Testing automatizado
 
-
-
 <div class="grid grid-cols-2 gap-8 mt-10">
-
   <div class="p-6 rounded-xl border border-blue-400/50 bg-blue-900/20 backdrop-blur-sm">
-
     <h3 class="text-2xl font-bold text-blue-300 mb-4">Habilitar checks de accesibilidad</h3>
-
     <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
-
 ```kotlin
-
 @OptIn(ExperimentalTestApi::class)
-
 @Test
-
 fun myComposeTest(): Unit = runComposeUiTest {
-
-
 
     enableAccessibilityChecks() // ¡Mágico!
 
-
-
         setContentView {
-
                 ...
-
         }
-
 }
-
 ```
-
     </div>
-
     <p class="text-lg text-slate-200 mt-4">Activa las comprobaciones automáticas de accesibilidad en tus tests de UI.</p>
-
   </div>
-
-
 
   <div class="p-6 rounded-xl border border-emerald-400/50 bg-emerald-900/20 backdrop-blur-sm">
-
     <h3 class="text-2xl font-bold text-emerald-300 mb-4">Verificar roles semánticos</h3>
-
     <div class="bg-slate-900 rounded-lg p-4 font-mono text-sm text-slate-200 leading-relaxed">
-
 ```kotlin
-
 composeTestRule
-
     .onNodeWithText("My Button")
-
     .assert(
-
         SemanticsMatcher("has correct role") {
-
             it.config.getOrNull(SemanticsProperties.Role) == Role.Button
-
         },
-
     )
-
 ```
-
     </div>
-
     <p class="text-lg text-slate-200 mt-4">Asegura que los componentes tienen los roles de accesibilidad correctos.</p>
-
   </div>
-
 </div>
 
 ---
