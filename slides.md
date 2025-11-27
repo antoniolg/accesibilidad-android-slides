@@ -719,33 +719,24 @@ layout: center
 
 ---
 
-# 5.2 Herramientas de análisis
-
-<div class="grid grid-cols-3 gap-8">
-  <div class="flex flex-col items-center p-6 rounded-xl border border-emerald-400/50 bg-emerald-900/20 backdrop-blur-sm">
-    <p class="text-xl font-bold text-emerald-300 mb-4">Accessibility Scanner</p>
-    <div class="flex justify-center mb-4">
-      <img src="/accessibility-scanner.png" width="200" class="rounded-lg shadow-lg border border-slate-700/50" />
-    </div>
-    <p class="text-sm text-slate-200 text-center">Herramienta de Google para encontrar problemas de accesibilidad.</p>
+# 5.2 Herramientas: Accessibility Scanner
+  <div class="flex justify-center">
+    <img src="/accessibility-scanner.png" width="350" class="rounded-xl shadow-2xl border border-emerald-500/30" />
   </div>
 
-  <div class="flex flex-col items-center p-6 rounded-xl border border-blue-400/50 bg-blue-900/20 backdrop-blur-sm">
-    <p class="text-xl font-bold text-blue-300 mb-4">Android Studio: Compose UI Check</p>
-    <div class="flex justify-center mb-4">
-      <img src="/compose-ui-check.png" width="200" class="rounded-lg shadow-lg border border-slate-700/50" />
-    </div>
-    <p class="text-sm text-slate-200 text-center">Análisis automático de accesibilidad en Previews de Compose.</p>
+---
+
+# 5.2 Herramientas: Compose UI Check
+  <div class="flex justify-center mt-10">
+    <img src="/compose-ui-check.png" width="700" class="rounded-xl shadow-2xl border border-blue-500/30" />
   </div>
 
-  <div class="flex flex-col items-center p-6 rounded-xl border border-rose-400/50 bg-rose-900/20 backdrop-blur-sm">
-    <p class="text-xl font-bold text-rose-300 mb-4">Google Play Pre-launch report</p>
-    <div class="flex justify-center mb-4">
-      <img src="/pre-launch-report.png" width="200" class="rounded-lg shadow-lg border border-slate-700/50" />
-    </div>
-    <p class="text-sm text-slate-200 text-center">Análisis automático al subir la app a Google Play.</p>
+---
+
+# 5.2 Herramientas: Pre-launch report
+  <div class="flex justify-center">
+    <img src="/pre-launch-report.png" width="900" class="rounded-xl shadow-2xl border border-rose-500/30" />
   </div>
-</div>
 
 ---
 
