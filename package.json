@@ -1,0 +1,21 @@
+{
+  "name": "accesibilidad-android-talk",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "slidev build",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.2.4",
+    "slidev-theme-the-unnamed": "^0.0.22"
+  },
+  "devDependencies": {
+    "vite-svg-loader": "^4.0.0"
+  }
+}
