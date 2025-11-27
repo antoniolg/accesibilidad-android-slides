@@ -24,7 +24,7 @@ themeConfig:
   <div class="flex flex-col text-left text-slate-100 leading-tight gap-1">
     <div class="font-semibold">Antonio Leiva</div>
     <div class="text-slate-300">GDE Android y Partner JetBrains</div>
-    <div class="text-slate-400"><i>DevExpert SLU</i></div>
+    <div class="text-slate-400"><i>DevExpert</i></div>
   </div>
 </div>
 
